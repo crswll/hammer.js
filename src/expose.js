@@ -51,11 +51,6 @@ assign(Hammer, {
     prefixed: prefixed
 });
 
-// this prevents errors when Hammer is loaded in the presence of an AMD
-//  style loader but by script tag, not by the loader.
-var freeGlobal = (typeof window !== 'undefined' ? window : (typeof self !== 'undefined' ? self : {})); // jshint ignore:line
-freeGlobal[exportName] = Hammer;
-
 if (typeof define === 'function' && define.amd) {
     define(function() {
         return Hammer;
